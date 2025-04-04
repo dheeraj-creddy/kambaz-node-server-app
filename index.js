@@ -8,7 +8,7 @@ import UserRoutes from "./Kambaz/Users/routes.js";
 import session from "express-session";
 import ModuleRoutes from "./Kambaz/Modules/routes.js";
 const app = express();
-
+app.use(cors());
 app.use(
     cors({
         credentials: true,
@@ -31,12 +31,15 @@ if (process.env.NODE_ENV !== "development") {
 }
 app.use(session(sessionOptions));
 app.use(express.json()); // make sure this is configure BEFORE all the routes below
-Lab5(app);
 UserRoutes(app);
 CourseRoutes(app);
 //EnrollmentRoutes(app);
 ModuleRoutes(app);
+Lab5(app);
 app.listen(process.env.PORT || 4000);
+
+
+
 
 
 

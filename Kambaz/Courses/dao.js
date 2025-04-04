@@ -14,7 +14,7 @@ export function findCoursesForEnrolledUser(userId) {
 }
 
 export function createCourse(course) {
-    const newCourse = { ...course, _id: uuidv4() };
+    const newCourse = { ...course, _id: uuidv4() };//different
     Database.courses = [...Database.courses, newCourse];
     return newCourse;
 }
