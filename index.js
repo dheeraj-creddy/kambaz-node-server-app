@@ -10,35 +10,42 @@ import ModuleRoutes from "./Kambaz/Modules/routes.js";
 import EnrollmentRoutes from './Kambaz/Enrollments/routes.js';
 import AssignmentRoutes from './Kambaz/Assignments/routes.js';
 const app = express();
-app.use(cors());
+
+// Configure CORS with credentials
 app.use(
     cors({
         credentials: true,
         origin: process.env.NETLIFY_URL || "http://localhost:5173",
     })
 );
- // make sure cors is used right after creating the app
+
+// Configure session
 const sessionOptions = {
     secret: process.env.SESSION_SECRET || "kambaz",
     resave: false,
     saveUninitialized: false,
+    cookie: {
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    }
 };
+
 if (process.env.NODE_ENV !== "development") {
     sessionOptions.proxy = true;
-    sessionOptions.cookie = {
-        sameSite: "none",
-        secure: true,
-        domain: process.env.NODE_SERVER_DOMAIN,
-    };
+    sessionOptions.cookie.domain = process.env.NODE_SERVER_DOMAIN;
 }
+
 app.use(session(sessionOptions));
-app.use(express.json()); // make sure this is configure BEFORE all the routes below
+app.use(express.json());
+
+// Configure routes
 UserRoutes(app);
 CourseRoutes(app);
 ModuleRoutes(app);
 EnrollmentRoutes(app);
 AssignmentRoutes(app);
 Lab5(app);
+
 app.listen(process.env.PORT || 4000);
 
 

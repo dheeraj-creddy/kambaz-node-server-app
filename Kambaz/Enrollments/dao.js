@@ -1,25 +1,31 @@
 import Database from "../Database/index.js";
 import { v4 as uuidv4 } from "uuid";
 
-
-export function enrollUserInCourse(userId, courseId) {
-    const { enrollments } = Database;
-    enrollments.push({ _id: uuidv4(), user: userId, course: courseId });
-}
-
-export function getAllEnrollments() {
+export const findAllEnrollments = () => {
     return Database.enrollments;
+};
 
-}
-
-export function createEnrollment(enrollment) {
-    const newEnrollment = {...enrollment, _id: Date.now().toString()};
+export const createEnrollment = (enrollment) => {
+    const newEnrollment = { ...enrollment, _id: uuidv4() };
     Database.enrollments = [...Database.enrollments, newEnrollment];
     return newEnrollment;
+};
 
-}
+export const deleteEnrollment = (enrollmentId) => {
+    Database.enrollments = Database.enrollments.filter(
+        (enrollment) => enrollment._id !== enrollmentId
+    );
+    return { status: "OK" };
+};
 
-export function removeEnrollment(enrollmentId) {
-    const {enrollments} = Database;
-    Database.enrollments = enrollments.filter((e) => e._id !== enrollmentId);
-}
+export const findEnrollmentsByUser = (userId) => {
+    return Database.enrollments.filter(
+        (enrollment) => enrollment.user === userId
+    );
+};
+
+export const findEnrollmentsByCourse = (courseId) => {
+    return Database.enrollments.filter(
+        (enrollment) => enrollment.course === courseId
+    );
+};
