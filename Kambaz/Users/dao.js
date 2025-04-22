@@ -1,10 +1,14 @@
 //import db from "../Database/index.js";
 import model from "./model.js";
 //let { users } = db;
-export const createUser = (user) => {
+/*export const createUser = (user) => {
     delete user._id
     return model.create(user);
-};
+};*/
+export const createUser = (user) => {
+    const newUser = { ...user, _id: uuidv4() };
+    return model.create(newUser);
+}
 export const findAllUsers = () => model.find();
 export const findUserById = (userId) => model.findById(userId);
 export const findUserByUsername = (username) => model.findOne({ username: username });
