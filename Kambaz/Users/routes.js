@@ -52,7 +52,9 @@ export default function UserRoutes(app) {
     };
     const signin = async (req, res) => {
         const { username, password } = req.body;
+        console.log("Signin attempt", { username, password });
         const currentUser = await dao.findUserByCredentials(username, password);
+        console.log("Result from DB:", currentUser);
         if (currentUser) {
             req.session["currentUser"] = currentUser;
             res.json(currentUser);
@@ -130,4 +132,10 @@ export default function UserRoutes(app) {
     };
     app.post("/api/users/:uid/courses/:cid", enrollUserInCourse);
     app.delete("/api/users/:uid/courses/:cid", unenrollUserFromCourse);
+
+    app.get("/api/users/test-db", async (req, res) => {
+        const users = await dao.findAllUsers();
+        res.json(users);
+    });
+
 }
