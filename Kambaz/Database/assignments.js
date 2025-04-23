@@ -1,83 +1,11 @@
 export default [
-    {
-        "_id": "A101",
-        "title": "Propulsion Assignment",
-        "course": "RS101",
-        "unlock": "2024-05-06T00:00",
-        "due": "2024-05-13T23:59",
-        "description": "Propulsion calculations and arithmetic",
-        "points": 75
-    },
-    {
-        "_id": "A102",
-        "title": "Combustion Analysis",
-        "course": "RS101",
-        "unlock": "2024-05-13T14:00",
-        "due": "2024-05-20T23:59",
-        "description": "Combustion Analysis Assignment description",
-        "points": 50
-    },
-    {
-        "_id": "A103",
-        "title": "Nozzle Design Project",
-        "course": "RS101",
-        "unlock": "2024-05-20T00:00",
-        "due": "2024-05-27T20:59",
-        "description": "Nozzle Design Project Assignment description",
-        "points": 100
-    },
-    {
-        "_id": "A201",
-        "title": "Aerodynamics Quiz",
-        "course": "RS102",
-        "unlock": "2024-11-15T14:00",
-        "due": "2024-11-20T23:59",
-        "description": "Aerodynamics Quiz description",
-        "points": 80
-    },
-    {
-        "_id": "A202",
-        "title": "Flow Analysis",
-        "course": "RS102",
-        "unlock": "2024-11-15T00:00",
-        "due": "2024-11-20T23:59",
-        "description": "Flow Analysis Assignment description",
-        "points": 100
-    },
-    {
-        "_id": "A203",
-        "title": "Heating Analysis",
-        "course": "RS102",
-        "unlock": "2024-11-20T00:00",
-        "due": "2024-11-25T23:59",
-        "description": "Heating Analysis Assignment description",
-        "points": 100
-    },
-    {
-        "_id": "A301",
-        "title": "Structural Design Task",
-        "course": "RS103",
-        "unlock": "2024-05-06T00:00",
-        "due": "2024-05-13T23:59",
-        "description": "Structural Design Task Assignment description",
-        "points": 100
-    },
-    {
-        "_id": "A302",
-        "title": "Orbital Calculations",
-        "course": "RS103",
-        "unlock": "2024-05-13T00:00",
-        "due": "2024-05-20T23:59",
-        "description": "Orbital Calculations Assignment description",
-        "points": 60
-    },
-    {
-        "_id": "A303",
-        "title": "Systems Engineering Exam",
-        "course": "RS103",
-        "unlock": "2024-05-20T00:00",
-        "due": "2024-05-27T23:59",
-        "description": "Systems Engineering Exam description",
-        "points": 100
-    }
-];
+    { "_id": "A101", "title": "Propulsion Assignment", "course": "RS101", "description": "This assignment is about propulsion", "points": 90, "due": "27 Feb 2025", "available": "20 Feb 2025", "until": "22 Feb 2025" },
+    { "_id": "A102", "title": "Combustion Analysis", "course": "RS101", "description": "This assignment is about combustion", "points": 50, "due": "29 Feb 2025", "available": "24 Feb 2025", "until": "25 Feb 2025" },
+    { "_id": "A103", "title": "Nozzle Design Project", "course": "RS101", "description": "This assignment is about nozzle design", "points": 98, "due": "8 Mar 2025", "available": "1 Mar 2025", "until": "3 Mar 2025" },
+    { "_id": "A201", "title": "Aerodynamics Quiz", "course": "RS102", "description": "This quiz is about aerodynamics", "points": 65, "due": "17 Mar 2025", "available": "10 Mar 2025", "until": "12 Mar 2025" },
+    { "_id": "A202", "title": "Flow Analysis", "course": "RS102", "description": "This assignment is about flow analysis", "points": 88, "due": "27 Mar 2025", "available": "20 Mar 2025", "until": "21 Mar 2025" },
+    { "_id": "A203", "title": "Heating Analysis", "course": "RS102", "description": "This assignment is about heating analysis", "points": 92, "due": "19 Mar 2025", "available": "9 Mar 2025", "until": "10 Mar 2025" },
+    { "_id": "A301", "title": "Structural Design Task", "course": "RS103", "description": "This assignment is about structural design", "points": 28, "due": "31 Mar 2025", "available": "11 Mar 2025", "until": "12 Mar 2025" },
+    { "_id": "A302", "title": "Orbital Calculations", "course": "RS103", "description": "This assignment is about orbital calculations", "points": 74, "due": "13 Apr 2025", "available": "3 Apr 2025", "until": "6 Apr 2025" },
+    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103", "description": "This exam is about systems engineering", "points": 91, "due": "20 Apr 2025", "available": "20 Apr 2025", "until": "21 Apr 2025" }
+  ]
