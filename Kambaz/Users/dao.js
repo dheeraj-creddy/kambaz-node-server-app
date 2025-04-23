@@ -12,7 +12,18 @@ export const createUser = (user) => {
 export const findAllUsers = () => model.find();
 export const findUserById = (userId) => model.findById(userId);
 export const findUserByUsername = (username) => model.findOne({ username: username });
-export const findUserByCredentials = (username, password) => model.findOne({ username, password });
+//export const findUserByCredentials = (username, password) => model.findOne({ username, password });
+export const findUserByCredentials = async (username, password) => {
+    const users = await model.find();
+    console.log("🧠 All users in DB:", users);
+
+    const found = await model.findOne({ username, password });
+    console.log("🔍 findOne({ username, password }) result:", found);
+
+    return found;
+};
+
+
 export const updateUser = (userId, user) => model.updateOne({ _id: userId }, { $set: user });
 export const deleteUser = (userId) => model.deleteOne({ _id: userId });
 export const findUsersByRole = (role) => model.find({ role: role });
