@@ -12,7 +12,11 @@ import EnrollmentRoutes from './Kambaz/Enrollments/routes.js';
 import AssignmentRoutes from './Kambaz/Assignments/routes.js';
 import QuizRoutes from "./Kambaz/Quizzes/routes.js";
 const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kambaz"
-mongoose.connect(CONNECTION_STRING);
+//mongoose.connect(CONNECTION_STRING);
+mongoose.connect(process.env.MONGO_CONNECTION_STRING)
+    .then(() => console.log("✅ Connected to MongoDB Atlas"))
+    .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
 const app = express();
 app.use(cors({
     credentials: true,
